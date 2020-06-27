@@ -12,7 +12,16 @@ if(!$isUserExist){
     $pass = $_POST['pass'];
     $pass = mysqli_real_escape_string($link, $pass);
     $hash = password_hash($pass, PASSWORD_DEFAULT);
-    $query = "INSERT INTO users (login, password) VALUES ('$login', '$hash')";
+
+    $firstname = $_POST['firstname'];
+    $firstname = mysqli_real_escape_string($link, $firstname);
+    $lastname = $_POST['lastname'];
+    $lastname = mysqli_real_escape_string($link, $lastname);
+    $email = $_POST['email'];
+    $email = mysqli_real_escape_string($link, $email);
+    $address = $_POST['address'];
+    $address = mysqli_real_escape_string($link, $address);
+    $query = "INSERT INTO users (login, password, firstname, lastname, email, address) VALUES ('$login', '$hash', '$firstname', '$lastname', '$email', '$address')";
     $result = mysqli_query($link, $query);
 
     session_start();

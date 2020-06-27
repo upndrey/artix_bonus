@@ -116,3 +116,22 @@ body {
 
     color: black;
 }
+
+/* Личный кабинет */
+.wrapper_profile {
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px;
+
+    border-bottom: 1px solid #000;
+}
+
+.header__title {
+    font-size: 42px;
+}

@@ -21,6 +21,10 @@ session_start();
         <input type="hidden" name="action" id="action">
         <input type="text" name="login" placeholder="Логин" required class="login-form__text">
         <input type="password" name="pass" placeholder="Пароль" required class="login-form__text">
+        <input type="text" name="firstname" placeholder="Имя" required class="login-form__text">
+        <input type="text" name="lastname" placeholder="Фамилия" required class="login-form__text">
+        <input type="email" name="email" placeholder="Почта" required class="login-form__text">
+        <input type="text" name="address" placeholder="Адрес" required class="login-form__text">
         <div class="login-form__enter enter">
             <div class="g-recaptcha" data-sitekey="6LdiJqoZAAAAAHArBJPLVOv7vop6JvID8eSAvQs2"></div>
             <input type="submit" value="Вход" class="enter__submit">
