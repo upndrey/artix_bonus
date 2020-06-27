@@ -1,8 +1,6 @@
 <?php
 require_once "connect.php";
-if(!isset($_POST['login'])) {
-    $_SESSION['order-send'] = null;
-    $_SESSION['message'] = null;
+if(!isset($_POST['login']) || !isset($_POST['password'])) {
     header('Location: ../');
 }
 $recaptcha = $_POST['g-recaptcha-response'];
@@ -11,7 +9,7 @@ if(!empty($recaptcha)) {
     //Получаем HTTP от recaptcha
     $recaptcha = $_REQUEST['g-recaptcha-response'];
     //Сюда пишем СЕКРЕТНЫЙ КЛЮЧ, который нам присвоил гугл
-    $secret = '6LfmYuoUAAAAAO3qm8JOi30gHPbmi0bp5SCo_Vjx';
+    $secret = '6LdiJqoZAAAAAJ6DEPjQlckNSzqhKBMrcnbA63ef';
     //Формируем utl адрес для запроса на сервер гугла
     $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secret ."&response=".$recaptcha."&remoteip=".$_SERVER['REMOTE_ADDR'];
 
@@ -34,21 +32,18 @@ if(!empty($recaptcha)) {
         $login = mysqli_real_escape_string($link, $login);
         $pass = $_POST['pass'];
         $pass = mysqli_real_escape_string($link, $pass);
-        $result = mysqli_query($link, "(SELECT password FROM customers WHERE login='$login')");
+        $result = mysqli_query($link, "(SELECT password FROM users WHERE login='$login')");
         $hash = mysqli_fetch_array($result);
-        $hash[0] = str_replace(' ', '', $hash[0]);
-        $hash[0] = strtolower($hash[0]);
-        if(md5($pass) === $hash[0]){
+        if(password_verify ($pass, $hash[0])){
             session_start();
             $_SESSION['login'] = $login;
-            $_SESSION['order-send'] = null;
-            $_SESSION['message'] = null;
-            header('Location: ../order.php');
+            header('Location: ../profile.php');
             exit;
         }
         else{
             session_start();
-            $_SESSION['message'] = "Аккаунт с таким логином не существует, либо введен неверный пароль!";
+            $_SESSION['message'] = password_hash($pass, PASSWORD_DEFAULT) . " " . $hash[0];
+            //$_SESSION['message'] = "Аккаунт с таким логином не существует, либо введен неверный пароль!";
             header('Location: ../');
         }
 
