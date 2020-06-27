@@ -7,7 +7,7 @@ if(!$_SESSION['login']) {
 
 $login = $_SESSION['login'];
 
-$query = "SELECT firstname, lastname FROM users WHERE login='$login'";
+$query = "SELECT * FROM users WHERE login='$login'";
 $result = mysqli_query($link, $query);
 if($mysqlName = mysqli_fetch_assoc($result)) {
     echo json_encode($mysqlName, JSON_UNESCAPED_UNICODE);

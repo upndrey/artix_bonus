@@ -33,6 +33,7 @@ else{
     session_start();
     $_SESSION['message'] = "Аккаунт с таким логином существует!";
     header('Location: ../index.php');
+    exit;
 }
 
 ?>

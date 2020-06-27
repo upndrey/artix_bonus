@@ -4,24 +4,14 @@ body {
 }
 
 .wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    position: relative;
 
     width: 1120px;
-    min-height: 400px;
+    min-height: 350px;
 
-    margin: 100px auto;
+    margin: auto;
     padding: 25px;
 
     background: white;
@@ -31,13 +21,15 @@ body {
     color: black;
 }
 
-.wrapper__title {
-    margin: 0 0 25px 0;
+.title {
+    display: block;
 
-    text-align: center;
+    width: 1120px;
+
+    margin: 100px auto 10px auto;
+
     font-size: 42px;
 }
-
 
 /*  Авторизация  */
 .wrapper__login-form {
@@ -111,17 +103,21 @@ body {
 
 
 .wrapper__login-link {
+    width: 600px;
+
+    margin: 10px auto;
+    padding: 10px;
+    box-sizing: border-box;
+
+    border: 1px solid #000;
+
     text-align: center;
     text-decoration: none;
 
     color: black;
 }
 
-/* Личный кабинет */
-.wrapper_profile {
-    padding: 0;
-}
-
+/* header */
 .header {
     display: flex;
     align-items: center;
@@ -132,6 +128,91 @@ body {
     border-bottom: 1px solid #000;
 }
 
-.header__title {
-    font-size: 42px;
+.short-info {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 5px;
 }
+
+/* Личный кабинет */
+.wrapper_profile {
+    padding: 0;
+}
+
+.content {
+
+    padding: 25px;
+}
+
+.content__title {
+    margin-bottom: 25px;
+
+    font-size: 28px;
+    text-align: center;
+}
+
+.content__info {
+    margin-bottom: 25px;
+}
+
+.content__edit {
+    display: block;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.info__block {
+    display: flex;
+
+    width: 600px;
+
+    margin: auto;
+}
+
+.info__block>* {
+    display: inline-block;
+
+    width: 100%;
+
+    margin: 2px;
+    padding: 10px 25px;
+
+    border: 1px solid #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

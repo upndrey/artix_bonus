@@ -34,7 +34,7 @@ if(!empty($recaptcha)) {
         $pass = mysqli_real_escape_string($link, $pass);
         $result = mysqli_query($link, "(SELECT password FROM users WHERE login='$login')");
         $hash = mysqli_fetch_array($result);
-        if(password_verify ($pass, $hash[0])){
+        if(password_verify($pass, $hash[0])){
             session_start();
             $_SESSION['login'] = $login;
             header('Location: ../profile.php');
@@ -42,20 +42,22 @@ if(!empty($recaptcha)) {
         }
         else{
             session_start();
-            $_SESSION['message'] = password_hash($pass, PASSWORD_DEFAULT) . " " . $hash[0];
-            //$_SESSION['message'] = "Аккаунт с таким логином не существует, либо введен неверный пароль!";
+            $_SESSION['message'] = "Аккаунт с таким логином не существует, либо введен неверный пароль!";
             header('Location: ../');
+            exit;
         }
 
     } else {
         session_start();
         $_SESSION['message'] = "Каптча не пройдена!";
         header('Location: ../');
+        exit;
     }
 }
 else {
     session_start();
     $_SESSION['message'] = "Каптча не пройдена!";
     header('Location: ../');
+    exit;
 }
 ?>

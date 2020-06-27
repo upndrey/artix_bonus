@@ -17,13 +17,38 @@ require_once "./php/connect.php";
     <link rel="stylesheet" href="css/media.css">
 </head>
 <body>
+<a class="title">Личный кабинет</a>
 <div class="wrapper wrapper_profile">
     <div class="wrapper__header header">
-        <h1 class="header__title">Личный кабинет</h1>
-        <div class="header__short-info short-info">
-            <div class="short-info__name js-name"></div>
-            <div class="short-info__points js-points"></div>
+        <div class="header__menu menu">
+            <a class="menu__current-page">Профиль</a>
+            <a href="history.php">История транзакций</a>
         </div>
+        <div class="header__short-info short-info">
+            <a class="short-info__name js-name"></a>
+        </div>
+    </div>
+    <div class="wrapper__content content">
+        <h2 class="content__title">Профиль</h2>
+
+        <div class="content__info info">
+            <div class="info__block">
+                <span>Логин</span><span class="js-login"></span>
+            </div>
+            <div class="info__block">
+                <span>Имя</span><span class="js-firstname"></span>
+            </div>
+            <div class="info__block">
+                <span>Фамилия</span><span class="js-lastname"></span>
+            </div>
+            <div class="info__block">
+                <span>Бонусный баланс</span><span><span class="js-points"></span><span>&nbsp;б.</span></span>
+            </div>
+            <div class="info__block">
+                <span>Почта</span><span class="js-email"></span>
+            </div>
+        </div>
+        <a href="edit.php" class="content__edit">Редактировать</a>
     </div>
 </div>
 <script src="js/index.js" charset="utf-8"></script>
