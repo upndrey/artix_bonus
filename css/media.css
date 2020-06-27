@@ -1,0 +1,277 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
+/* xs - устройства (до 576px) */
+
+@media (max-width: 576px) {
+    .wrapper {
+        width: 525px;
+    }
+
+    .wrapper__logo, .wrapper__content-block {
+        width: 510px;
+        margin: auto;
+    }
+
+    .wrapper__logo {
+        margin-bottom: 10px;
+    }
+
+    #search,
+    .login-form,
+    .order-form,
+    .content-block__select-button,
+    .content-block__select-table {
+        width: 460px;
+    }
+
+    .select-row__elem:nth-child(1){
+        width: 200px;
+    }
+
+    .select-row_folder .select-row__elem:nth-child(1) {
+        width: 360px;
+    }
+
+    .select-row__elem:nth-child(2),
+    .select-row__elem:nth-child(3) {
+        width: 80px;
+    }
+
+    .content-block__title {
+        font-size: 36px;
+    }
+
+    .content-block__select-button {
+        padding: 15px 10px;
+        font-size: 30px;
+    }
+
+    .send-block__submit, .login-form__submit{
+        font-size: 24px;
+    }
+
+    .order-form__address-button,
+    .product-block__add {
+        font-size: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .product-row__name {
+        width: 190px;
+    }
+
+    .product-row__count{
+        width: 80px;
+    }
+    .product-row__price,
+    .product-row__total {
+        width: 80px;
+    }
+
+    .product-row__count {
+        padding-right: 30px;
+        top: 14px;
+    }
+
+    .product-row__measure {
+        right: 115px;
+    }
+
+    .product-row__remove {
+        margin-left: 2px;
+    }
+
+    #order-form__address-textarea,
+    .product-row__name,
+    .product-row__count,
+    .product-row__price,
+    .product-row__remove,
+    .product-row__total,
+    .login-form__text,
+    .send-block__total-price,
+    .order-form__address,
+    .date-block__label,
+    .date-block__print-date {
+        font-size: 17px;
+    }
+
+    .content-block__close {
+        right: 30px;
+        top: 15px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .login-form__enter {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .login-form__text {
+        width: 300px;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+
+    .enter__submit {
+        width: 302px;
+        height: 75px;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+/* sm-устройства (больше или равно 576px) */
+@media (min-width: 576px) and (max-width: 768px) {
+    .wrapper {
+        width: 550px;
+    }
+
+    #search,
+    .login-form,
+    .order-form,
+    .content-block__select-button,
+    .content-block__select-table {
+        width: 500px;
+    }
+
+    .select-row__elem:nth-child(1){
+        width: 320px;
+    }
+
+    .select-row__elem:nth-child(2),
+    .select-row__elem:nth-child(3) {
+        width: 90px;
+    }
+
+    .product-row__count {
+        padding-right: 30px;
+        top: 14px;
+    }
+
+    .product-row__measure {
+        right: 140px;
+    }
+
+    .content-block__title {
+        font-size: 38px;
+    }
+
+    .content-block__select-button {
+        font-size: 30px;
+    }
+
+    .send-block__submit, .login-form__submit{
+        font-size: 24px;
+    }
+
+    .order-form__address-button,
+    .product-block__add {
+        font-size: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .content-block__select-button{
+        padding: 15px 0;
+    }
+
+    .product-row__price {
+        padding: 15px 5px;
+    }
+
+    .product-row__name {
+        width: 190px;
+    }
+
+    .product-row__count{
+        width: 80px;
+    }
+    .product-row__price,
+    .product-row__total {
+        width: 100px;
+    }
+
+    .product-row__name,
+    .product-row__count,
+    .product-row__price,
+    .product-row__remove,
+    .login-form__text,
+    .send-block__total-price,
+    .order-form__address,
+    .date-block__label,
+    .date-block__print-date {
+        font-size: 17px;
+    }
+}
+
+/* md-устройства (больше или равно 768px) */
+@media (min-width: 768px) and (max-width: 992px) {
+    .wrapper {
+        width: 750px;
+    }
+
+    .content-block__title {
+        font-size: 42px;
+    }
+
+    .content-block__select-button {
+        font-size: 36px;
+    }
+
+    .send-block__submit, .login-form__submit{
+        font-size: 28px;
+    }
+
+    .order-form__address-button,
+    .product-block__add {
+        font-size: 24px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .product-row__select,
+    .product-row__count,
+    .product-row__price,
+    .product-row__remove,
+    .login-form__text,
+    .send-block__total-price,
+    .order-form__address,
+    .date-block__label,
+    .date-block__print-date {
+        font-size: 20px;
+    }
+}
+
+/* lg-устройства (больше или равно 992px) */
+@media (min-width: 992px) and (max-width: 1200px) {
+    .wrapper {
+        width: 900px;
+    }
+}
