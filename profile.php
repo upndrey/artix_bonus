@@ -18,14 +18,8 @@ require_once "./php/connect.php";
 </head>
 <body>
 <div class="wrapper">
-    <div class="wrapper__content-block content-block" id="content-block">
-        <h1 class="content-block__title" id="content-block__title">Личный кабинет</h1>
-
-    </div>
+    <h1 class="wrapper__title">Личный кабинет</h1>
 </div>
-<script>
-
-</script>
 <script src="js/index.js" charset="utf-8"></script>
 </body>
 </html>

@@ -1,31 +1,9 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
-/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
 /* Глобальные значения */
 body {
-    background: #f7f5eb;
     font-family: 'Open Sans', sans-serif;
 }
 
-
 .wrapper {
-    width: 1120px;
-    margin: 100px auto;
-}
-
-.wrapper__logo {
-    margin-bottom: 10px;
-}
-
-.content-block {
-    background: #363636;
-    border-radius: 5px;
-    min-height: 400px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -36,24 +14,35 @@ body {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 25px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: relative;
+
+    width: 1120px;
+    min-height: 400px;
+
+    margin: 100px auto;
+    padding: 25px;
+
+    background: white;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    color: black;
 }
 
-.content-block__title {
-    margin: 0;
+.wrapper__title {
+    margin: 0 0 25px 0;
+
     text-align: center;
-    color: #f7f5eb;
     font-size: 42px;
-    margin-bottom: 25px;
 }
 
 
 /*  Авторизация  */
-.content-block__login-form {
+.wrapper__login-form {
     margin: 0 auto;
+
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -74,24 +63,29 @@ body {
 }
 
 .enter__submit {
-    font-size: 32px;
-    margin-left: 10px;
     width: 100%;
     height: 76px;
-    font-family: 'Open Sans', sans-serif;
-    text-transform: uppercase;
+
+    margin-left: 10px;
+
+    background: white;
+    border: 1px solid black;
     border-radius: 5px;
-    color: #363636;
-    background: #f7f5eb;
-    border: 0;
     -webkit-transition: background-color .5s ease-in-out;
     -o-transition: background-color .5s ease-in-out;
     transition: background-color .5s ease-in-out;
+
+    font-size: 32px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+
 }
 
 .enter__submit:hover {
+    background: black;
     cursor: pointer;
-    background: white;
+
+    color: white;
 }
 
 
@@ -102,38 +96,23 @@ body {
 .login-form__text {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 15px;
-    font-size: 21px;
+
     margin-bottom: 25px;
-    font-family: 'Open Sans', sans-serif;
-    border: 1px solid #f7f5eb;
-    background: transparent;
+    padding: 15px;
+
+    border: 1px solid black;
     border-radius: 5px;
-    color: #f7f5eb;
+    background: transparent;
+
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 21px;
 }
 
-.login-form__text::-webkit-input-placeholder {
-    color: #f7f5eb;
-}
 
-.login-form__text::-moz-placeholder {
-    color: #f7f5eb;
-}
-
-.login-form__text:-ms-input-placeholder {
-    color: #f7f5eb;
-}
-
-.login-form__text::-ms-input-placeholder {
-    color: #f7f5eb;
-}
-
-.login-form__text::placeholder {
-    color: #f7f5eb;
-}
-
-.login-link {
-    text-decoration: none;
-    color: white;
+.wrapper__login-link {
     text-align: center;
+    text-decoration: none;
+
+    color: black;
 }
