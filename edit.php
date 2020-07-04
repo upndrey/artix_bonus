@@ -2,6 +2,7 @@
 session_start();
 if(!isset($_SESSION['login'])){
     header('Location: ./');
+    exit;
 }
 require_once "./php/connect.php";
 ?>
@@ -23,9 +24,14 @@ require_once "./php/connect.php";
         <div class="header__menu menu">
             <a href="profile.php" class="menu__current-page">Профиль</a>
             <a href="history.php">История транзакций</a>
+            <?
+            if($_SESSION['status'] === "admin")
+                echo "<a href='admin.php'>Админ</a>";
+            ?>
         </div>
         <div class="header__short-info short-info">
             <a class="short-info__name js-name"></a>
+            <a href="index.php">Выход</a>
         </div>
     </div>
     <form method="post" id="sendDataForm" action="php/changeData.php" class="wrapper__content content">
@@ -57,12 +63,15 @@ require_once "./php/connect.php";
                 <label for="password">Старый пароль*</label><input name="password" id="password" type="password" required class="js-password-input">
             </div>
         </div>
-        <input type="submit" value="Редактировать" class="content__edit">
+        <div class="content__links">
+            <a href="profile.php" class="content__edit">Назад</a>
+            <input type="submit" value="Редактировать" class="content__edit">
+        </div>
     </form>
 </div>
 <script>
     <?
-    if(isset($_SESSION['message'])){
+    if(isset($_SESSION['message'])) {
         echo "alert('". $_SESSION['message'] . "')";
         $_SESSION['message'] = null;
     }

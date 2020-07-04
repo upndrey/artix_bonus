@@ -2,6 +2,7 @@
 require_once "connect.php";
 if(!isset($_POST['login']) || !isset($_POST['password'])) {
     header('Location: ../');
+    exit;
 }
 $recaptcha = $_POST['g-recaptcha-response'];
 if(!empty($recaptcha)) {
@@ -32,11 +33,15 @@ if(!empty($recaptcha)) {
         $login = mysqli_real_escape_string($link, $login);
         $pass = $_POST['pass'];
         $pass = mysqli_real_escape_string($link, $pass);
-        $result = mysqli_query($link, "(SELECT password FROM users WHERE login='$login')");
+        $result = mysqli_query($link, "(SELECT password, privilege_id FROM users WHERE login='$login')");
         $hash = mysqli_fetch_array($result);
         if(password_verify($pass, $hash[0])){
+            $result2 = mysqli_query($link, "(SELECT title FROM privilegies WHERE id='$hash[1]')");
+            $status = mysqli_fetch_array($result2);
+
             session_start();
             $_SESSION['login'] = $login;
+            $_SESSION['status'] = $status[0];
             header('Location: ../profile.php');
             exit;
         }

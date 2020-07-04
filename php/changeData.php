@@ -3,6 +3,7 @@ require_once "connect.php";
 session_start();
 if(!$_SESSION['login']) {
     header('Location: ./');
+    exit;
 }
 
 $oldLogin = $_SESSION['login'];

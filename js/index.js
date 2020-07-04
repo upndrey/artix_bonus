@@ -23,11 +23,13 @@ function setFullInfo(data) {
         let lastnameDom = document.querySelector(".js-lastname");
         let pointsDom = document.querySelector(".js-points");
         let emailDom = document.querySelector(".js-email");
+        let statusDom = document.querySelector(".js-status");
         loginDom.innerHTML = data["login"];
         firstnameDom.innerHTML = data["firstname"];
         lastnameDom.innerHTML = data["lastname"];
         pointsDom.innerHTML = data["points"];
         emailDom.innerHTML = data["email"];
+        statusDom.innerHTML = data["privilege_id"];
     }
 }
 

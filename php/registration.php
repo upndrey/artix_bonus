@@ -2,6 +2,7 @@
 require_once "connect.php";
 if(!isset($_POST['login']) || !isset($_POST['password'])) {
     header('Location: ../');
+    exit;
 }
 
 $login = $_POST['login'];
@@ -21,7 +22,7 @@ if(!$isUserExist){
     $email = mysqli_real_escape_string($link, $email);
     $address = $_POST['address'];
     $address = mysqli_real_escape_string($link, $address);
-    $query = "INSERT INTO users (login, password, firstname, lastname, email, address) VALUES ('$login', '$hash', '$firstname', '$lastname', '$email', '$address')";
+    $query = "INSERT INTO users (login, password, firstname, lastname, email, address, privilege_id) VALUES ('$login', '$hash', '$firstname', '$lastname', '$email', '$address', '1')";
     $result = mysqli_query($link, $query);
 
     session_start();

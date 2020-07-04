@@ -2,6 +2,7 @@
 session_start();
 if(!isset($_SESSION['login'])){
     header('Location: ./');
+    exit;
 }
 require_once "./php/connect.php";
 ?>
@@ -23,9 +24,14 @@ require_once "./php/connect.php";
         <div class="header__menu menu">
             <a class="menu__current-page">Профиль</a>
             <a href="history.php">История транзакций</a>
+            <?
+            if($_SESSION['status'] === "admin")
+                echo "<a href='admin.php'>Админ</a>";
+            ?>
         </div>
         <div class="header__short-info short-info">
             <a class="short-info__name js-name"></a>
+            <a href="index.php">Выход</a>
         </div>
     </div>
     <div class="wrapper__content content">
@@ -46,6 +52,9 @@ require_once "./php/connect.php";
             </div>
             <div class="info__block">
                 <span>Почта</span><span class="js-email"></span>
+            </div>
+            <div class="info__block">
+                <span>Статус</span><span class="js-status"></span>
             </div>
         </div>
         <a href="edit.php" class="content__edit">Редактировать</a>

@@ -135,6 +135,10 @@ body {
     padding: 5px;
 }
 
+.short-info a {
+    margin: 5px;
+}
+
 /* Личный кабинет */
 .wrapper_profile {
     padding: 0;
@@ -164,6 +168,17 @@ body {
     text-align: center;
 }
 
+.content__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content__links .content__edit {
+    display: inline-block;
+    margin: 10px;
+}
+
 .info__block {
     display: flex;
 
@@ -184,9 +199,45 @@ body {
 }
 
 
+/* admin */
+.transactions {
+    display: flex;
+    flex-direction: column;
 
+    width: 500px;
+}
 
+.transactions>* {
+    margin-bottom: 5px;
+}
 
+.transactions>input[type="submit"] {
+    margin-bottom: 15px;
+}
+
+.transactions__list {
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.list__row {
+    display: flex;
+
+}
+
+.list__row>div {
+    width: 100%;
+
+    padding: 10px;
+    margin: 1px;
+
+    border: 1px solid #000;
+}
 
 
 
