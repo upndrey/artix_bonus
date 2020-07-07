@@ -31,6 +31,10 @@ body {
     font-size: 42px;
 }
 
+.hidden {
+    display: none;
+}
+
 /*  Авторизация  */
 .wrapper__login-form {
     margin: 0 auto;
@@ -215,14 +219,34 @@ body {
     margin-bottom: 15px;
 }
 
-.transactions__list {
+.transactions__list, .transactions__header{
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+
+    max-height: 250px;
 
     padding: 10px;
 
     border: 1px solid #000;
     box-sizing: border-box;
+}
+
+.transactions__header {
+    overflow: hidden;
+    padding-right: 25px;
+}
+
+.transactions__add {
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.transactions__add>* {
+    margin: 5px 10px;
 }
 
 .list__row {
@@ -237,9 +261,19 @@ body {
     margin: 1px;
 
     border: 1px solid #000;
+    box-sizing: border-box;
 }
 
+.js-transaction_checkbox {
+    width: 0;
+    height: 0;
+}
 
+.js-transaction_checkbox:checked + label>* {
+    background: red;
+    border: 1px solid transparent;
+    color: white;
+}
 
 
 

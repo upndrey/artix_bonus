@@ -35,11 +35,14 @@ require_once "./php/connect.php";
         <h2 class="content__title">Админ панель</h2>
         <form action="./php/admin.php" method="post" class="content__admin admin">
             <div class="admin__transactions transactions">
+                <div class="transactions__header js-transactions__header"></div>
                 <div class="transactions__list js-transactions__list list"></div>
                 <input type="submit" name="removeTransactions" value="Удалить выбранные транзакции">
-                <input type="text" name="transactionTitle" placeholder="Название транзакции">
-                <input type="text" name="transactionAbout" placeholder="Описание транзакции">
-                <input type="number" name="transactionPrice" placeholder="0">
+                <div class="transactions__add">
+                    <input type="text" name="transactionTitle" placeholder="Название транзакции">
+                    <input type="text" name="transactionAbout" placeholder="Описание транзакции">
+                    <input type="number" name="transactionPrice" placeholder="Цена">
+                </div>
                 <input type="submit" name="addTransaction" value="Добавить транзакцию">
             </div>
         </form>

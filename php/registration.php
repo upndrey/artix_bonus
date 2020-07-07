@@ -1,6 +1,6 @@
 <?php
 require_once "connect.php";
-if(!isset($_POST['login']) || !isset($_POST['password'])) {
+if(!isset($_POST['login']) || !isset($_POST['pass'])) {
     header('Location: ../');
     exit;
 }
@@ -9,6 +9,7 @@ $login = $_POST['login'];
 $login = mysqli_real_escape_string($link, $login);
 $result = mysqli_query($link, "(SELECT * FROM users WHERE login='$login')");
 $isUserExist = mysqli_fetch_array($result);
+echo $isUserExist[0];
 if(!$isUserExist){
     $pass = $_POST['pass'];
     $pass = mysqli_real_escape_string($link, $pass);
@@ -22,7 +23,8 @@ if(!$isUserExist){
     $email = mysqli_real_escape_string($link, $email);
     $address = $_POST['address'];
     $address = mysqli_real_escape_string($link, $address);
-    $query = "INSERT INTO users (login, password, firstname, lastname, email, address, privilege_id) VALUES ('$login', '$hash', '$firstname', '$lastname', '$email', '$address', '1')";
+    $privilege_id = 1;
+    $query = "INSERT INTO users (login, password, firstname, lastname, email, address, privilege_id) VALUES ('$login', '$hash', '$firstname', '$lastname', '$email', '$address', '$privilege_id')";
     $result = mysqli_query($link, $query);
 
     session_start();

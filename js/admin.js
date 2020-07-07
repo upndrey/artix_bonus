@@ -12,6 +12,7 @@ async function getTransactions() {
 function setTransactionInputs(data) {
     if(document.querySelector(".js-transactions__list")) {
         let transactionsDom = document.querySelector(".js-transactions__list");
+        let transactionsHeaderDom = document.querySelector(".js-transactions__header");
 
         /* Заголовок таблицы */
         let rowDom = document.createElement("div");
@@ -28,11 +29,16 @@ function setTransactionInputs(data) {
         rowDom.appendChild(titleDom);
         rowDom.appendChild(aboutDom);
         rowDom.appendChild(priceDom);
-        transactionsDom.appendChild(rowDom);
+        transactionsHeaderDom.appendChild(rowDom);
+
+        let maxIdDom = document.createElement("input");
+        maxIdDom.type = "hidden";
+        maxIdDom.name = "max_id";
 
         for(let elem in data) {
-            let rowDom = document.createElement("div");
+            let rowDom = document.createElement("label");
             rowDom.className = "list__row";
+            rowDom.htmlFor = "transaction_" + data[elem]['id'];
             let titleDom = document.createElement("div");
             titleDom.innerText = data[elem]['title'];
 
@@ -45,13 +51,19 @@ function setTransactionInputs(data) {
             let checkboxDom = document.createElement("input");
             checkboxDom.type = "checkbox";
             checkboxDom.name = "transaction_" + data[elem]['id'];
+            checkboxDom.id = "transaction_" + data[elem]['id'];
+            checkboxDom.className = "js-transaction_checkbox";
+
 
             rowDom.appendChild(titleDom);
             rowDom.appendChild(aboutDom);
             rowDom.appendChild(priceDom);
-            rowDom.appendChild(checkboxDom);
+            transactionsDom.appendChild(checkboxDom);
             transactionsDom.appendChild(rowDom);
+
+            maxIdDom.value = data[elem]['id'];
         }
+        transactionsDom.appendChild(maxIdDom);
     }
 }
 

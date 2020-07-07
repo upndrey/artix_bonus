@@ -15,6 +15,16 @@ if( isset($_POST['addTransaction']) &&
     $query = "INSERT INTO transactions (title, about, price) VALUES ('$title', '$about', '$price')";
     $result = mysqli_query($link, $query);
 }
-
+else if(isset($_POST['removeTransactions'])) {
+    $transactionsCount = $_POST['max_id'];
+    $i = 1;
+    while($i <= $transactionsCount) {
+        if(isset($_POST['transaction_' . $i]) && $_POST['transaction_' . $i] == "on") {
+            $query = "DELETE FROM transactions WHERE id='$i'";
+            $result = mysqli_query($link, $query);
+        }
+        $i++;
+    }
+}
 header('Location: ../admin.php');
 exit;
