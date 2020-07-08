@@ -35,6 +35,18 @@ require_once "./php/connect.php";
             <a href="index.php">Выход</a>
         </div>
     </div>
+    <div class="wrapper__content content">
+        <h2 class="content__title">История транзакций</h2>
+        <div class="content__transaction-list transaction-header">
+            <div class="transaction-list__row row">
+                <div class="row__elem">Название</div>
+                <div class="row__elem">Описание</div>
+                <div class="row__elem">Цена</div>
+                <div class="row__elem">Дата</div>
+            </div>
+        </div>
+        <div class="content__transaction-list js-transaction-list"></div>
+    </div>
 </div>
 <script>
     let js_page = "history";

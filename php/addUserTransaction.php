@@ -15,7 +15,7 @@ $mysqlUserId = $mysqlUserId['id'];
 $transactionId = $_POST['transaction_id'];
 $date = Date('Y-m-d-h-m-s');
 $query = "INSERT INTO user_transactions (user_id, transaction_id, date) 
-          VALUES ('$mysqlUserId', '$transactionId', '$date')";
+      VALUES ('$mysqlUserId', '$transactionId', '$date')";
 $result = mysqli_query($link, $query);
 header('Location: ../profile.php');
 exit;

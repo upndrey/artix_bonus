@@ -5,8 +5,23 @@ document.addEventListener("DOMContentLoaded", async () => {
         await setFullInfo(data);
         await setInput(data);
         if(js_page === "profile") {
+            document.getElementById("js-addTransaction").addEventListener("submit", (e) => {
+                if(document.querySelector(".js-price")) {
+                    let points = document.querySelector(".js-points").innerHTML;
+                    let priceDom = document.querySelector(".js-price");
+                    if(points < priceDom.value) {
+                        e.preventDefault();
+                        let temp = priceDom.value - points;
+                        alert("Вам не хватает " + temp + " баллов!");
+                    }
+                }
+            });
             let transactions = await getData("../php/getTransactions.php");
-            await setTransactions(transactions)
+            await setTransactions(transactions);
+        }
+        else if(js_page === "history") {
+            let transactions = await getData("../php/getUserTransactions.php");
+            await setHistory(transactions);
         }
     }
     else {
@@ -71,14 +86,49 @@ function setTransactions(transactions) {
     let transactionsDom = document.querySelector(".js-transaction__select");
     for(let elem in transactions) {
         let optionDom = document.createElement("option");
-        optionDom.innerText = transactions[elem]['title'] + " " + transactions[elem]['price'] + "р.";
-        optionDom.value = transactions[elem]['title'];
+        optionDom.innerText = transactions[elem]['title'] + " " + transactions[elem]['price'] + " б.";
+        optionDom.value = transactions[elem]['id'];
         transactionsDom.appendChild(optionDom);
     }
-    transactionsDom.addEventListener("select", ()=> {
-
+    transactionsDom.addEventListener("change", ()=> {
+        let priceDom = document.querySelector(".js-price");
+        let optionId = transactionsDom.options[transactionsDom.selectedIndex].value;
+        transactions.forEach((elem) => {
+            if(elem['id'] === optionId) {
+                priceDom.value = elem['price'];
+                return;
+            }
+        });
     });
 }
+
+function setHistory(transactions) {
+    let historyDom = document.querySelector(".js-transaction-list");
+    for(let elem in transactions) {
+        let rowDom = document.createElement("div");
+        rowDom.className = "transaction-list__row row";
+        let titleDom = document.createElement("div");
+        titleDom.className = "row__elem";
+        titleDom.innerHTML = transactions[elem]['title'];
+        let aboutDom = document.createElement("div");
+        aboutDom.className = "row__elem";
+        aboutDom.innerHTML = transactions[elem]['about'];
+        let priceDom = document.createElement("div");
+        priceDom.className = "row__elem";
+        priceDom.innerHTML = transactions[elem]['price'] + " б.";
+        let dateDom = document.createElement("div");
+        dateDom.className = "row__elem";
+        dateDom.innerHTML = transactions[elem]['date'];
+
+
+        rowDom.appendChild(titleDom);
+        rowDom.appendChild(aboutDom);
+        rowDom.appendChild(priceDom);
+        rowDom.appendChild(dateDom);
+        historyDom.appendChild(rowDom);
+    }
+}
+
 
 function setTransactionInputs(data) {
     if(document.querySelector(".js-transactions__list")) {

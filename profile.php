@@ -58,10 +58,13 @@ require_once "./php/connect.php";
             </div>
             <a href="edit.php" class="content__edit">Редактировать</a>
         </div>
-        <form action="./php/addUserTransaction.php" method="post" class="content__transaction transaction">
+        <form action="./php/addUserTransaction.php" method="post" class="content__transaction transaction" id="js-addTransaction">
             <h2 class="content__title">Совершить транзакцию</h2>
-            <select name="transaction_id" class="js-transaction__select"></select>
-            <input type="submit" name="submit">
+            <select name="transaction_id" class="js-transaction__select" required>
+                <option value="" selected disabled hidden>Выберите транзакцию</option>
+            </select>
+            <input type="hidden" name="cost" class="js-price">
+            <input type="submit" name="submit" value="Выбрать">
         </form>
     </div>
 </div>

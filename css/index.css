@@ -278,10 +278,44 @@ body {
     color: white;
 }
 
+/* История */
 
+.content__transaction-list {
+    width: 800px;
+    height: auto;
 
+    margin: auto;
+}
 
+.js-transaction-list {
+    display: flex;
+    flex-direction: column;
 
+    height: 500px;
+}
+
+.transaction-list__row {
+    display: flex;
+    border: 1px solid #000;
+}
+
+.transaction-list__row .row__elem {
+    width: 25%;
+
+    margin: 5px;
+    padding: 5px;
+
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+.transaction-header>.row{
+    border: 1px solid transparent;
+}
+
+.transaction-header .row__elem{
+    border: 1px solid transparent;
+}
 
 
 
