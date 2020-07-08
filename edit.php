@@ -34,7 +34,7 @@ require_once "./php/connect.php";
             <a href="index.php">Выход</a>
         </div>
     </div>
-    <form method="post" id="sendDataForm" action="php/changeData.php" class="wrapper__content content">
+    <form method="post" id="sendDataForm" action="php/changeProfile.php" class="wrapper__content content">
         <h2 class="content__title">Профиль</h2>
 
         <div class="content__info info">
@@ -76,6 +76,7 @@ require_once "./php/connect.php";
         $_SESSION['message'] = null;
     }
     ?>
+    let js_page = "edit";
 </script>
 <script src="js/index.js" charset="utf-8"></script>
 </body>

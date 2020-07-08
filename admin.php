@@ -48,6 +48,9 @@ require_once "./php/connect.php";
         </form>
     </div>
 </div>
-<script src="js/admin.js" charset="utf-8"></script>
+<script>
+    let js_page = "admin";
+</script>
+<script src="js/index.js" charset="utf-8"></script>
 </body>
 </html>

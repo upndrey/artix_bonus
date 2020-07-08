@@ -34,10 +34,10 @@ require_once "./php/connect.php";
             <a href="index.php">Выход</a>
         </div>
     </div>
-    <div class="wrapper__content content">
-        <h2 class="content__title">Профиль</h2>
+    <div class="wrapper__content content content_profile">
 
         <div class="content__info info">
+            <h2 class="content__title">Профиль</h2>
             <div class="info__block">
                 <span>Логин</span><span class="js-login"></span>
             </div>
@@ -56,10 +56,18 @@ require_once "./php/connect.php";
             <div class="info__block">
                 <span>Статус</span><span class="js-status"></span>
             </div>
+            <a href="edit.php" class="content__edit">Редактировать</a>
         </div>
-        <a href="edit.php" class="content__edit">Редактировать</a>
+        <form action="./php/addUserTransaction.php" method="post" class="content__transaction transaction">
+            <h2 class="content__title">Совершить транзакцию</h2>
+            <select name="transaction_id" class="js-transaction__select"></select>
+            <input type="submit" name="submit">
+        </form>
     </div>
 </div>
+<script>
+    let js_page = "profile";
+</script>
 <script src="js/index.js" charset="utf-8"></script>
 </body>
 </html>

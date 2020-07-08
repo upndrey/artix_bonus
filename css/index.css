@@ -149,8 +149,11 @@ body {
 }
 
 .content {
-
     padding: 25px;
+}
+
+.content_profile {
+    display: flex;
 }
 
 .content__title {

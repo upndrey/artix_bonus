@@ -36,6 +36,9 @@ require_once "./php/connect.php";
         </div>
     </div>
 </div>
+<script>
+    let js_page = "history";
+</script>
 <script src="js/index.js" charset="utf-8"></script>
 </body>
 </html>
