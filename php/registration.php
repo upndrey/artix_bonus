@@ -29,6 +29,7 @@ if(!$isUserExist){
 
     session_start();
     $_SESSION['login'] = $login;
+    $_SESSION['status'] = "user";
     header('Location: ../profile.php');
     exit;
 }

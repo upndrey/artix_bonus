@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 if(document.querySelector(".js-price")) {
                     let points = document.querySelector(".js-points").innerHTML;
                     let priceDom = document.querySelector(".js-price");
-                    if(points < priceDom.value) {
+                    if(parseFloat(points) < parseFloat(priceDom.value)) {
                         e.preventDefault();
                         let temp = priceDom.value - points;
                         alert("Вам не хватает " + temp + " баллов!");
@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     else {
         let transactions = await getData("../php/getTransactions.php");
         await setTransactionInputs(transactions);
+        let userTypes = await getData("../php/getUserTypes.php");
+        await setUserTypes(userTypes);
     }
 });
 
@@ -104,6 +106,7 @@ function setTransactions(transactions) {
 
 function setHistory(transactions) {
     let historyDom = document.querySelector(".js-transaction-list");
+    transactions = transactions.reverse();
     for(let elem in transactions) {
         let rowDom = document.createElement("div");
         rowDom.className = "transaction-list__row row";
@@ -129,6 +132,7 @@ function setHistory(transactions) {
     }
 }
 
+// Админ панель
 
 function setTransactionInputs(data) {
     if(document.querySelector(".js-transactions__list")) {
@@ -188,7 +192,15 @@ function setTransactionInputs(data) {
     }
 }
 
-
+function setUserTypes(userTypes) {
+    let userTypeDom = document.querySelector(".js-userType");
+    for(let elem in userTypes) {
+        let optionDom = document.createElement("option");
+        optionDom.innerText = userTypes[elem]['title'];
+        optionDom.value = userTypes[elem]['id'];
+        userTypeDom.appendChild(optionDom);
+    }
+}
 
 
 

@@ -70,6 +70,12 @@ require_once "./php/connect.php";
 </div>
 <script>
     let js_page = "profile";
+    <?
+    if(isset($_SESSION['message'])){
+        echo "alert('". $_SESSION['message'] . "');";
+        $_SESSION['message'] = null;
+    }
+    ?>
 </script>
 <script src="js/index.js" charset="utf-8"></script>
 </body>

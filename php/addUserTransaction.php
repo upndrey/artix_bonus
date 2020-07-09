@@ -17,5 +17,14 @@ $date = Date('Y-m-d-h-m-s');
 $query = "INSERT INTO user_transactions (user_id, transaction_id, date) 
       VALUES ('$mysqlUserId', '$transactionId', '$date')";
 $result = mysqli_query($link, $query);
+
+$query = "SELECT price FROM transactions WHERE id='$transactionId'";
+$result = mysqli_query($link, $query);
+$mysqlTransactionPrice = mysqli_fetch_assoc($result);
+$mysqlTransactionPrice = $mysqlTransactionPrice['price'];
+
+$query = "UPDATE users SET points=points - '$mysqlTransactionPrice' WHERE id='$mysqlUserId'";
+$result = mysqli_query($link, $query);
+$_SESSION['message'] = "Транзакция выполнена!";
 header('Location: ../profile.php');
 exit;

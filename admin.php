@@ -45,11 +45,24 @@ require_once "./php/connect.php";
                 </div>
                 <input type="submit" name="addTransaction" value="Добавить транзакцию">
             </div>
+            <div class="admin__points points">
+                <select name="userType" class="js-userType">
+                    <option value="" selected disabled hidden>Выберите тип пользователя</option>
+                </select>
+                <input type="number" name="points" placeholder="Введите кол-во зачисляемых баллов">
+                <input type="submit" name="addPoints" value="Начислить баллы">
+            </div>
         </form>
     </div>
 </div>
 <script>
     let js_page = "admin";
+    <?
+    if(isset($_SESSION['message'])){
+        echo "alert('". $_SESSION['message'] . "');";
+        $_SESSION['message'] = null;
+    }
+    ?>
 </script>
 <script src="js/index.js" charset="utf-8"></script>
 </body>

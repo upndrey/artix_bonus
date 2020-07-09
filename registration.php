@@ -35,7 +35,7 @@ session_start();
 <script>
     <?
     if(isset($_SESSION['message'])){
-        echo "alert('". $_SESSION['message'] . "')";
+        echo "alert('". $_SESSION['message'] . "');";
         $_SESSION['message'] = null;
     }
     ?>

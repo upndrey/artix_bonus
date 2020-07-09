@@ -49,6 +49,12 @@ require_once "./php/connect.php";
     </div>
 </div>
 <script>
+    <?
+    if(isset($_SESSION['message'])){
+        echo "alert('". $_SESSION['message'] . "');";
+        $_SESSION['message'] = null;
+    }
+    ?>
     let js_page = "history";
 </script>
 <script src="js/index.js" charset="utf-8"></script>

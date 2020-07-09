@@ -72,7 +72,7 @@ require_once "./php/connect.php";
 <script>
     <?
     if(isset($_SESSION['message'])) {
-        echo "alert('". $_SESSION['message'] . "')";
+        echo "alert('". $_SESSION['message'] . "');";
         $_SESSION['message'] = null;
     }
     ?>
