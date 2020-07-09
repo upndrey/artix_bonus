@@ -14,8 +14,10 @@ session_start();
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body>
-<h1 class="title">Регистрация</h1>
 <div class="wrapper">
+    <div class="wrapper__header header">
+        <h1 class="title">Регистрация</h1>
+    </div>
     <form action="/php/registration.php" method='post' class="wrapper__login-form login-form">
         <input type="hidden" name="token" id="token">
         <input type="hidden" name="action" id="action">

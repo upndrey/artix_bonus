@@ -6,29 +6,42 @@ body {
 .wrapper {
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
 
     width: 1120px;
     min-height: 350px;
 
-    margin: auto;
-    padding: 25px;
+    margin: 100px auto;
+    padding: 10px;
 
     background: white;
     border: 1px solid black;
     border-radius: 5px;
+    box-sizing: border-box;
 
     color: black;
+}
+
+.wrapper__header {
+    width: 100%;
+
+    margin-bottom: 50px;
+
+    box-sizing: border-box;
 }
 
 .title {
     display: block;
 
-    width: 1120px;
+    width: 100%;
 
-    margin: 100px auto 10px auto;
+    margin: auto;
+    padding: 25px;
+
+    background: #5e5f6a;
+    box-sizing: border-box;
 
     font-size: 42px;
+    color: white;
 }
 
 .hidden {
@@ -122,14 +135,10 @@ body {
 }
 
 /* header */
-.header {
+.header>div{
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding: 10px;
-
-    border-bottom: 1px solid #000;
 }
 
 .short-info {
@@ -144,12 +153,13 @@ body {
 }
 
 /* Личный кабинет */
-.wrapper_profile {
-    padding: 0;
-}
 
 .content {
     padding: 25px;
+}
+
+.content input[type="submit"] {
+    padding: 5px 10px;
 }
 
 .content_profile {
@@ -167,10 +177,27 @@ body {
     margin-bottom: 25px;
 }
 
+.content__transaction {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 25px;
+}
+
+.content__transaction>select {
+    margin-bottom: 10px;
+}
+
+.content__transaction>h2 {
+    margin-bottom: 25px;
+}
+
 .content__edit {
     display: block;
 
-    margin: auto;
+    margin: 10px auto;
+
+    box-sizing: border-box;
 
     text-align: center;
 }
@@ -207,11 +234,32 @@ body {
 
 
 /* admin */
-.transactions {
+.admin {
+    display: flex;
+}
+
+.admin>* {
+    width: 100%;
+}
+
+.admin h2 {
+    margin-bottom: 25px;
+}
+
+
+.points {
     display: flex;
     flex-direction: column;
+    padding: 0 25px;
+}
 
-    width: 500px;
+.points>select, .points>input {
+    margin-bottom: 10px;
+}
+
+.admin__transactions {
+    display: flex;
+    flex-direction: column;
 }
 
 .transactions>* {
@@ -238,6 +286,7 @@ body {
 .transactions__header {
     overflow: hidden;
     padding-right: 25px;
+    margin: 0;
 }
 
 .transactions__add {

@@ -18,20 +18,21 @@ require_once "./php/connect.php";
     <link rel="stylesheet" href="css/media.css">
 </head>
 <body>
-<a class="title">Личный кабинет</a>
 <div class="wrapper wrapper_profile">
     <div class="wrapper__header header">
-        <div class="header__menu menu">
-            <a href="profile.php" class="menu__current-page">Профиль</a>
-            <a href="history.php">История транзакций</a>
-            <?
-            if($_SESSION['status'] === "admin")
-                echo "<a href='admin.php'>Админ</a>";
-            ?>
-        </div>
-        <div class="header__short-info short-info">
-            <a class="short-info__name js-name"></a>
-            <a href="index.php">Выход</a>
+        <a class="title">Личный кабинет</a>
+        <div>
+            <div class="header__menu menu">
+                <a href="profile.php" class="menu__current-page">Профиль</a>
+                <a href="history.php">История транзакций</a>
+                <?
+                if($_SESSION['status'] === "admin")
+                    echo "<a href='admin.php'>Админ</a>";
+                ?>
+            </div>
+            <div class="header__short-info short-info">
+                <a href="index.php">Выход</a>
+            </div>
         </div>
     </div>
     <form method="post" id="sendDataForm" action="php/changeProfile.php" class="wrapper__content content">

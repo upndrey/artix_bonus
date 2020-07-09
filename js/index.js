@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
     if(js_page !== "admin") {
         let data = await getData("../php/getProfile.php");
-        await setShortInfo(data);
         await setFullInfo(data);
         await setInput(data);
         if(js_page === "profile") {
@@ -37,10 +36,6 @@ async function getData(url) {
     return await response.json();
 }
 
-function setShortInfo(data) {
-    let nameDom = document.querySelector(".js-name");
-    nameDom.innerHTML = data["firstname"] + " " + data["lastname"];
-}
 
 function setFullInfo(data) {
     if(document.querySelector(".js-login")) {
