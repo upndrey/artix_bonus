@@ -36,7 +36,7 @@ require_once "./php/connect.php";
         </div>
     </div>
     <form method="post" id="sendDataForm" action="php/changeProfile.php" class="wrapper__content content">
-        <h2 class="content__title">Профиль</h2>
+        <h2 class="content__title">Редактирование профиля</h2>
 
         <div class="content__info info">
             <div class="info__block">

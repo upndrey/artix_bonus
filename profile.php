@@ -64,7 +64,7 @@ require_once "./php/connect.php";
                 <option value="" selected disabled hidden>Выберите транзакцию</option>
             </select>
             <input type="hidden" name="cost" class="js-price">
-            <input type="submit" name="submit" value="Выбрать">
+            <input type="submit" name="submit" value="Выполнить">
         </form>
     </div>
 </div>
