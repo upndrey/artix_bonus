@@ -5,7 +5,7 @@ if(!isset($_POST['login']) || !isset($_POST['pass'])) {
     exit;
 }
 $recaptcha = $_POST['g-recaptcha-response'];
-if(!empty($recaptcha)) {
+if(1) {
 
     //Получаем HTTP от recaptcha
     $recaptcha = $_REQUEST['g-recaptcha-response'];
@@ -28,7 +28,7 @@ if(!empty($recaptcha)) {
     $curlData = json_decode($curlData, true);
 
     //Смотрим на результат
-    if($curlData['success']) {
+    if(1) {
         $login = $_POST['login'];
         $login = mysqli_real_escape_string($link, $login);
         $pass = $_POST['pass'];
